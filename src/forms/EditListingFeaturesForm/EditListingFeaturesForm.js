@@ -7,7 +7,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import { findOptionsForSelectFilter } from '../../util/search';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Button, FieldCheckboxGroup, Form } from '../../components';
+import { Button, FieldCheckboxGroup, FieldSelect, Form } from '../../components';
 
 import css from './EditListingFeaturesForm.css';
 
@@ -49,13 +49,31 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
-      const options = findOptionsForSelectFilter('yogaStyles', filterConfig);
+      const options = findOptionsForSelectFilter('subjects', filterConfig);
+
+      const standardOptions = findOptionsForSelectFilter('standard', filterConfig);
+
+      const standardName = 'standard';
+
+      const standardLabel = (<FormattedMessage id="EditListingFeaturesForm.standardLabel" />);
+
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
 
           <FieldCheckboxGroup className={css.features} id={name} name={name} options={options} />
+
+          {standardOptions ? (
+              <FieldSelect className={css.certificate} name={standardName} id={standardName} label={standardLabel}>
+                {standardOptions.map(s => (
+                  <option key={s.key} value={s.key}>
+                    {s.label}
+                  </option>
+                ))}
+              </FieldSelect>
+            ) : null
+          }
 
           <Button
             className={css.submitButton}

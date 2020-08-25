@@ -91,34 +91,59 @@ export const filters = [
     // You can turn on/off ordering by distance from config.js file.
     config: {},
   },
+  // {
+  //   id: 'yogaStyles',
+  //   label: 'Yoga styles',
+  //   type: 'SelectMultipleFilter',
+  //   group: 'secondary',
+  //   queryParamNames: ['pub_yogaStyles'],
+  //   config: {
+  //     // Optional modes: 'has_all', 'has_any'
+  //     // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
+  //     searchMode: 'has_all',
+
+  //     // "key" is the option you see in Flex Console.
+  //     // "label" is set here for this web app's UI only.
+  //     // Note: label is not added through the translation files
+  //     // to make filter customizations a bit easier.
+  //     options: [
+  //       { key: 'ashtanga', label: 'Ashtanga' },
+  //       { key: 'hatha', label: 'Hatha' },
+  //       { key: 'kundalini', label: 'Kundalini' },
+  //       { key: 'restorative', label: 'Restorative' },
+  //       { key: 'vinyasa', label: 'Vinyasa' },
+  //       { key: 'yin', label: 'Yin' },
+  //     ],
+  //   },
+  // },
   {
-    id: 'yogaStyles',
-    label: 'Yoga styles',
+    id: 'subjects',
+    label: 'Subjects',
     type: 'SelectMultipleFilter',
     group: 'secondary',
-    queryParamNames: ['pub_yogaStyles'],
+    queryParamNames: ['pub_subjects'],
     config: {
       // Optional modes: 'has_all', 'has_any'
       // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
-      searchMode: 'has_all',
+      searchMode: 'has_any',
 
       // "key" is the option you see in Flex Console.
       // "label" is set here for this web app's UI only.
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'ashtanga', label: 'Ashtanga' },
-        { key: 'hatha', label: 'Hatha' },
-        { key: 'kundalini', label: 'Kundalini' },
-        { key: 'restorative', label: 'Restorative' },
-        { key: 'vinyasa', label: 'Vinyasa' },
-        { key: 'yin', label: 'Yin' },
+        { key: 'maths', label: 'Mathematics' },
+        { key: 'physics', label: 'Physics' },
+        { key: 'chemistry', label: 'Chemistry' },
+        { key: 'biology', label: 'Biology' },
+        { key: 'computer', label: 'Computer Science' },
+        { key: 'english', label: 'English' },
       ],
     },
   },
   {
     id: 'certificate',
-    label: 'Certificate',
+    label: 'Education Qualification',
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamNames: ['pub_certificate'],
@@ -129,8 +154,28 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-        { key: '200h', label: 'Registered yoga teacher 200h' },
-        { key: '500h', label: 'Registered yoga teacher 500h' },
+        { key: `grad`, label: 'Graduate' },
+        { key: 'postGrad', label: 'Post Graduate' },
+        { key: 'phD', label: 'phD' },
+      ],
+    },
+  },
+  {
+    id: 'standard',
+    label: 'Select the standard group you will teach',
+    type: 'SelectSingleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_standard'],
+    config: {
+      // "key" is the option you see in Flex Console.
+      // "label" is set here for the UI only.
+      // Note: label is not added through the translation files
+      // to make filter customizations a bit easier.
+      options: [
+        { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+        { key: `one-five`, label: 'Std 1 to Std 5' },
+        { key: 'six-ten', label: 'Std 6 to Std 10' },
+        { key: 'eleven-twelve', label: 'Std 11 & Std 12' },
       ],
     },
   },
