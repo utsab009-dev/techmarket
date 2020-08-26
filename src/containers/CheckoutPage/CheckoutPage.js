@@ -529,7 +529,7 @@ export class CheckoutPageComponent extends Component {
     const topbar = (
       <div className={css.topbar}>
         <NamedLink className={css.home} name="LandingPage">
-          <Logo
+          {/* <Logo
             className={css.logoMobile}
             title={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}
             format="mobile"
@@ -538,7 +538,8 @@ export class CheckoutPageComponent extends Component {
             className={css.logoDesktop}
             alt={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}
             format="desktop"
-          />
+          /> */}
+          <span>TechMugen</span>
         </NamedLink>
       </div>
     );

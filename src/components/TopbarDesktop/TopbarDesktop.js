@@ -169,11 +169,12 @@ const TopbarDesktop = props => {
   return (
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">
-        <Logo
+        {/* <Logo
           format="desktop"
           className={css.logo}
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
-        />
+        /> */}
+        <span>TechMugen</span>
       </NamedLink>
       {search}
       {/* {listingLink} */}
